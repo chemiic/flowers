@@ -6,6 +6,7 @@ import InputCheckbox from "@/components/ui/input/input-checkbox";
 import {Breadcrumb} from "@/components/ui/bread-crumb/bread-crumb";
 import Select from "@/components/ui/select/select";
 import {sortValues} from "@/utils/constants";
+import Card from "@/components/ui/card/card";
 
 const Page = () => {
   const f_types: string[] = ["Букеты", "Цветы поштучно"];
@@ -21,6 +22,45 @@ const Page = () => {
     }
   ];
   const f_packages: string[] = ["Крафт бумага", "Ленты", "Плёнка"];
+
+  const flowers = [
+    {
+      image: "/image.png",
+      discount: 16,
+      name: "Вьюнок 001",
+      label: "Вьюнок куст",
+      height: 350,
+      color: {
+        label: "Розовый",
+        hex: "#FFD3E3",
+      },
+      price: 7990,
+    },
+    {
+      image: "/image.png",
+      discount: 0,
+      name: "Розы 006",
+      label: "Роза кустовая например",
+      height: 350,
+      color: {
+        label: "Кремовый",
+        hex: "#FFE9E5",
+      },
+      price: 200,
+    },
+    {
+      image: "/image.png",
+      discount: 0,
+      name: "Тюльпан 014",
+      label: "Тюльпан",
+      height: 350,
+      color: {
+        label: "Розовый",
+        hex: "#FFD3E3",
+      },
+      price: 7000,
+    },
+  ];
 
   const onApply = (): void => {
     console.log("Apply")
@@ -102,6 +142,11 @@ const Page = () => {
               </h3>
               <Select name={"sort_type"} values={sortValues} />
            </div>
+          <div className={"grid grid-cols-3 gap-x-[24px] gap-y-[55px]"}>
+            {flowers.map((flower, index) => (
+              <Card key={index} {...flower} />
+            ))}
+          </div>
         </div>
       </section>
       <div className={"flex justify-center pt-[60px]"}>
