@@ -16,7 +16,8 @@
 }
 
 body {
-  background: var(--milk)
+  background: var(--milk);
+  font-weight: 400;
 }
 
 .alert-enter {

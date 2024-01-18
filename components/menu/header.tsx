@@ -1,20 +1,22 @@
 import Logo from "@/components/icons/logo/logo";
 import LogoText from "@/components/icons/logo/logoText";
-import Link from "next/link";
 import Events from "@/components/icons/events/events";
 import SpaceDesign from "@/components/icons/spaceDesign/spaceDesign";
-import style from "@/components/menu/header.module.css"
 import Flowers from "@/components/icons/flowers/flowers";
 import PottedPlants from "@/components/icons/pottedPlants/pottedPlants";
 import Baloons from "@/components/icons/baloons/baloons";
 import Contacts from "@/components/icons/contacts/contacts";
+import Cart from "@/components/icons/cart/cart";
 
+import Link from "next/link";
+import style from "@/components/menu/header.module.css"
+import Phone from "@/components/icons/phone/phone";
 
 const Header = () => {
-
+const cartCount = 1
 return(
-    <div className={`hidden lg:flex justify-between items-center`}>
-        <div className={`flex items-end`}>
+    <div className={`hidden lg:flex justify-between items-center px-[--pagePadding] py-[20px]`}>
+        <div className={`flex items-end mr-[12vw]`}>
             <div className={`max-w-[80px]`}>
                 <Logo />
             </div>
@@ -22,7 +24,7 @@ return(
                 <LogoText/>
             </div>
         </div>
-        <nav>
+        <nav className={`flex items-center flex-grow justify-between`}>
             <ul className={`flex items-center gap-8`}>
                 <li className={style.navItem}>
                     <Events />
@@ -30,7 +32,7 @@ return(
                 </li>
                 <li className={style.navItem}>
                     <SpaceDesign />
-                    <Link href={``}>Оформлиние пространств</Link>
+                    <Link href={``}>Оформление пространств</Link>
                 </li>
                 <li className={style.navItem}>
                     <Flowers />
@@ -49,10 +51,18 @@ return(
                     <Link href={``}>Контакты</Link>
                 </li>
             </ul>
-        </nav>
-        <div>
 
-        </div>
+            <div className={`flex items-center justify-center text-[--salad] h-[32px]`}>
+                <Cart />
+                {cartCount !== 0 && `${cartCount}шт`}
+            </div>
+            <div className={`flex flex-col items-center`}>
+                <div className={`h-[24px] navItem`}>
+                    <Phone/>
+                </div>
+                <a href={`+7 (926) 497-45-00`} className={`block`}>+7 (926) 497-45-00</a>
+            </div>
+        </nav>
     </div>
 )
 }

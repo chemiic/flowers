@@ -9,7 +9,7 @@ import {sortValues} from "@/utils/constants";
 import Card from "@/components/ui/card/card";
 import {NextPage} from "next";
 
-const Page:NextPage = () => {
+const FlowersPage:NextPage = () => {
   const f_types: string[] = ["Букеты", "Цветы поштучно"];
   const f_flowers: string[] = ["Пион", "Ранункулюс", "Амариллис"];
   const f_colors: { label: string, hex: string }[] = [
@@ -161,4 +161,4 @@ const Page:NextPage = () => {
   );
 };
 
-export default Page;
+export default FlowersPage;
