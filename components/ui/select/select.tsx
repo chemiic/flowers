@@ -20,6 +20,7 @@ const Select = ({name, values}: props) => {
       id={name}
       onChange={(e: ChangeEvent<HTMLSelectElement>) => onChange(e)}
       value={current}
+      className={"hover:cursor-pointer"}
     >
       {values.map(value => (
         <option

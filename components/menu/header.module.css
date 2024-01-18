@@ -1,0 +1,14 @@
+.navItem:hover svg path{
+    fill: var(--salad);
+}
+.navItem:hover a {
+    color: var(--salad);
+}
+.navItem:hover{
+    cursor: pointer;
+}
+.navItem{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

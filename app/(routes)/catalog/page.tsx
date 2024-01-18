@@ -7,18 +7,19 @@ import {Breadcrumb} from "@/components/ui/bread-crumb/bread-crumb";
 import Select from "@/components/ui/select/select";
 import {sortValues} from "@/utils/constants";
 import Card from "@/components/ui/card/card";
+import {NextPage} from "next";
 
-const Page = () => {
+const Page:NextPage = () => {
   const f_types: string[] = ["Букеты", "Цветы поштучно"];
   const f_flowers: string[] = ["Пион", "Ранункулюс", "Амариллис"];
   const f_colors: { label: string, hex: string }[] = [
     {
       label: "Кремовый",
-      hex: "#FFE9E5"
+      hex: `#FFE9E5`,
     },
     {
       label: "Розовый",
-      hex: "#FFD3E3"
+      hex: `#FFD3E3`,
     }
   ];
   const f_packages: string[] = ["Крафт бумага", "Ленты", "Плёнка"];
@@ -71,7 +72,7 @@ const Page = () => {
   };
 
   return (
-    <main>
+    <main className={`p-[--pagePadding]`}>
       <Breadcrumb />
       <h1 className={"flex justify-center text-4xl text-[--gray] pt-[60px]"}>
         Цветы
@@ -79,6 +80,7 @@ const Page = () => {
       <section className={"flex justify-between gap-[40px]"}>
         <div className={"flex flex-col gap-y-4"}>
           {/* filters */}
+
           {/* f-type */}
           <div className={"flex flex-col gap-y-2"}>
             <h3 className={"text-xl text-[--fur]"}>
@@ -88,6 +90,7 @@ const Page = () => {
               <InputCheckbox key={index} id={type} label={type} name={"type"}/>
             ))}
           </div>
+
           {/* f-flowers */}
           <div className={"flex flex-col gap-y-2"}>
             <h3 className={"text-xl text-[--fur]"}>
@@ -108,6 +111,7 @@ const Page = () => {
               <InputCheckbox key={index} id={color.label} label={color.label} name={"color"} color={color.hex}/>
             ))}
           </div>
+
           {/* package */}
           <div className={"flex flex-col gap-y-2"}>
             <h3 className={"text-xl text-[--fur]"}>
@@ -135,6 +139,7 @@ const Page = () => {
           </div>
         </div>
         <div className={"flex flex-col gap-y-[40px]"}>
+
           {/* flowers */}
            <div className={"flex items-center gap-x-[24px]"}>
               <h3 className={"text-xl text-[--fur]"}>

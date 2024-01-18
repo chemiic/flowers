@@ -19,7 +19,7 @@ const InputCheckbox = ({id, label, color}: props) => {
       <label
         htmlFor={id}
       >
-        <span className={color ? `text-xl text-[--gray] bg-[${color}] px-2` : "text-xl text-[--gray]"}>
+        <span className={color ? `text-xl text-[--gray] px-2` : "text-xl text-[--gray]"} style={{background: color}}>
           {label}
         </span>
       </label>

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Burger from "@/components/menu/burger";
+import Header from "@/components/menu/header";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`px-[60px]`}>{children}</body>
+      <body>
+        <Header />
+        <Burger />
+        {children}
+      </body>
     </html>
   )
 }
