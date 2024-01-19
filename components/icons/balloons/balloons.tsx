@@ -1,6 +1,6 @@
 
 
-const baloons = () => {
+const balloons = () => {
     return(
         <svg className={`w-full h-[24px]]`}  width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_123_108)">
@@ -18,4 +18,4 @@ const baloons = () => {
 
     )
 }
-export default baloons;
+export default balloons;
