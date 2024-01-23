@@ -18,8 +18,7 @@ import Balloons from "@/components/icons/balloons/balloons";
 const Header = () => {
 
     const cartCount = 1
-    const router = usePathname()
-    console.log(router)
+    const path = usePathname()
     return(
         <div className={`hidden lg:flex justify-between items-center px-[--pagePadding] py-[20px] relative`}>
             <Link href={`/`} className={`flex items-end max-[1440px]:flex-col max-[1440px]:gap-1 max-[1440px]:items-center hover:cursor-pointer 
@@ -33,47 +32,47 @@ const Header = () => {
             </Link>
             <nav className={`min-[1440px]:absolute right-0 left-0`}>
                 <ul className={`flex items-center min-[1440px]:gap-[2vw] gap-3 justify-center `}>
-                    <li className={`${style.navItem} ${router==='/events' && style.activeNavItem} w-[99px]` }>
+                    <li className={`${style.navItem} ${path==='/events' && style.activeNavItem} w-[99px]` }>
                         <Link href={`/events`}>
                             <Events />
-                            {router !== '/events' && `Мероприятия`}
+                            {path !== '/events' && `Мероприятия`}
                         </Link>
                     </li>
-                    <li className={`${style.navItem} ${router==='/spaceDesign' && style.activeNavItem} w-[188px]` }>
+                    <li className={`${style.navItem} ${path==='/spaceDesign' && style.activeNavItem} w-[188px]` }>
                         <Link href={`/spaceDesign`}>
                             <SpaceDesign />
-                            {router !== '/spaceDesign' && `Оформление пространств`}
+                            {path !== '/spaceDesign' && `Оформление пространств`}
                         </Link>
                     </li>
-                    <li className={`${style.navItem} ${router==='/flowers' && style.activeNavItem} w-[46px]` }>
+                    <li className={`${style.navItem} ${path==='/flowers' && style.activeNavItem} w-[46px]` }>
                         <Link href={"/flowers"}>
                             <Flowers />
-                            {router !== '/flowers' && `Цветы`}
+                            {path !== '/flowers' && `Цветы`}
                         </Link>
                     </li>
-                    <li className={`${style.navItem} ${router==='/pottedPlants' && style.activeNavItem} w-[149px]` }>
+                    <li className={`${style.navItem} ${path==='/pottedPlants' && style.activeNavItem} w-[149px]` }>
                         <Link href={`/pottedPlants`}>
                             <PottedPlants />
-                            {router !== '/pottedPlants' && `Горшечные растения`}
+                            {path !== '/pottedPlants' && `Горшечные растения`}
                         </Link>
                     </li>
-                    <li className={`${style.navItem} ${router==='/balloons' && style.activeNavItem} w-[125px]` }>
+                    <li className={`${style.navItem} ${path==='/balloons' && style.activeNavItem} w-[125px]` }>
                         <Link href={`/balloons`}>
                             <Balloons />
-                            {router !== '/balloons' && `Воздушные шары`}
+                            {path !== '/balloons' && `Воздушные шары`}
                         </Link>
                     </li>
-                    <li className={`${style.navItem} ${router==='/contacts' && style.activeNavItem}  w-[67px]` }>
+                    <li className={`${style.navItem} ${path==='/contacts' && style.activeNavItem}  w-[67px]` }>
                         <Link href={`/contacts`}>
                             <Contacts />
-                            {router !== '/contacts' && `Контакты`}
+                            {path !== '/contacts' && `Контакты`}
                         </Link>
                     </li>
                 </ul>
             </nav>
             <div className={`flex min-[1440px]:justify-between gap-3 items-center 
             min-[1440px]:basis-1/6 relative min-[1440px]:z-10`}>
-                <div className={`flex items-center justify-center text-[--salad] h-[32px]`}>
+                <div className={`flex items-center justify-center text-[--salad] h-[32px] gap-1`}>
                     <Cart />
                     {cartCount !== 0 && `${cartCount}шт`}
                 </div>

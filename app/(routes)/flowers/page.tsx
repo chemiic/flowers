@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import {useState, SetStateAction} from 'react';
 import Pagination from "@/components/ui/pagination";
 import InputCheckbox from "@/components/ui/input/input-checkbox";
 import {Breadcrumb} from "@/components/ui/bread-crumb/bread-crumb";
@@ -9,7 +9,13 @@ import {sortValues} from "@/utils/constants";
 import Card from "@/components/ui/card/card";
 import {NextPage} from "next";
 
+
+
 const FlowersPage:NextPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 12
+
+  console.log(currentPage)
   const f_types: string[] = ["Букеты", "Цветы поштучно"];
   const f_flowers: string[] = ["Пион", "Ранункулюс", "Амариллис"];
   const f_colors: { label: string, hex: string }[] = [
@@ -141,21 +147,27 @@ const FlowersPage:NextPage = () => {
         <div className={"flex flex-col gap-y-[40px]"}>
 
           {/* flowers */}
-           <div className={"flex items-center gap-x-[24px]"}>
-              <h3 className={"text-xl text-[--fur]"}>
-                Сортировка
-              </h3>
-              <Select name={"sort_type"} values={sortValues} />
-           </div>
-          <div className={"grid grid-cols-3 gap-x-[24px] gap-y-[55px]"}>
-            {flowers.map((flower, index) => (
-              <Card key={index} {...flower} />
-            ))}
-          </div>
+             <div className={"flex items-center gap-x-[24px]"}>
+                <h3 className={"text-xl text-[--fur]"}>
+                  Сортировка
+                </h3>
+                <Select name={"sort_type"} values={sortValues} />
+             </div>
+            <div className={"grid grid-cols-3 gap-x-[24px] gap-y-[55px]"}>
+              {flowers.map((flower, index) => (
+                <Card key={index} {...flower} />
+              ))}
+            </div>
         </div>
       </section>
       <div className={"flex justify-center pt-[60px]"}>
-        <Pagination pages={[1, 2, 3]} />
+        <Pagination
+          pages={[1, 2, 3]}
+          currentPage={currentPage}
+          totalCount={120}
+          pageSize={pageSize}
+          onPageChange={(page:SetStateAction<number>)=> {setCurrentPage(page)}}
+        />
       </div>
     </main>
   );
