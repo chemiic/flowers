@@ -3,20 +3,17 @@ import {useRef, useState} from "react";
 import { CSSTransition } from 'react-transition-group'
 import Logo from "@/components/icons/logo/logo";
 import LogoText from "@/components/icons/logo/logoText";
-import style from "@/components/menu/header.module.css";
+import style from "@/components/menu/menu.module.css";
 import Events from "@/components/icons/events/events";
 import Link from "next/link";
 import SpaceDesign from "@/components/icons/spaceDesign/spaceDesign";
 import Flowers from "@/components/icons/flowers/flowers";
 import PottedPlants from "@/components/icons/pottedPlants/pottedPlants";
-import Baloons from "@/components/icons/balloons/balloons";
 import Contacts from "@/components/icons/contacts/contacts";
-import Cart from "@/components/icons/cart/cart";
 import Phone from "@/components/icons/phone/phone";
 import Balloons from "@/components/icons/balloons/balloons";
 import {usePathname} from "next/navigation";
 const Burger = () => {
-    const [showGoTop, setShowGoTop] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
 
     const showGoTopRef = useRef(null)
@@ -60,7 +57,7 @@ const Burger = () => {
             {/*Burger content*/}
             <CSSTransition in={isOpen} nodeRef={blockDInfoRef} timeout={500} unmountOnExit classNames='alert'>
                 <div
-                    className={"bg-[--crystal] overflow-hidden h-full"}
+                    className={"bg-[--crystal] overflow-hidden h-full relative z-40"}
                     ref={blockDInfoRef}
                     style={{
                         position: 'fixed',

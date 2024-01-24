@@ -12,7 +12,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
                                                            }, ref) => {
   return (
     <button ref={ref} {...props} className={cn(
-      `w-full max-w-[400px] rounded-md border-[--salad] text-[--salad] text-2xl border-2 py-[15px]
+      `w-full max-w-[400px] rounded-md border-[--salad] text-[--salad] text-2xl border-2 py-[15px] bg-[--milk]
              transition-all
              hover:border-[--brown] hover:text-[--brown]
       `,

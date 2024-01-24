@@ -1,0 +1,57 @@
+.logoGroup div svg path {
+    transition: all .3s;
+}
+.logoGroup:hover div svg path {
+    fill: var(--gray);
+}
+.navItem:hover svg path{
+    fill: var(--salad);
+    transition: all .3s;
+}
+.navItem:hover a {
+    color: var(--salad);
+}
+.navItem:hover{
+    cursor: pointer;
+}
+.navItem{
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.activeNavItem svg path{
+    fill: var(--salad);
+}
+.activeNavItem svg{
+    height: 40px;
+}
+
+.footerLogoGroup div svg path {
+    fill: var(--crystal);
+    transition: all .3s;
+}
+.footerLogoGroup:hover div svg path {
+    fill: var(--milk);
+}
+.footerNavItem:hover svg path{
+    fill: var(--milk);
+    transition: all .3s;
+}
+.footerNavItem:hover a {
+    fill: var(--milk);
+}
+.footerNavItem{
+    transition: all .3s;
+    flex-direction: column;
+    gap: 5px;
+}
+.footerNavItem svg path {
+    fill: var(--crystal);
+}
+.footerActiveNavItem svg path{
+    fill: var(--crystal);
+}
+.footerActiveNavItem svg{
+    height: 40px;
+}

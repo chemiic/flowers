@@ -3,6 +3,7 @@ import './globals.css'
 import Burger from "@/components/menu/burger";
 import Header from "@/components/menu/header";
 import localFont from "@next/font/local";
+import Footer from "@/components/menu/Footer";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Header />
         <Burger />
         {children}
+        <Footer />
       </body>
     </html>
   )

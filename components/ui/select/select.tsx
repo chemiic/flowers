@@ -25,7 +25,10 @@ const Select = ({name, values}: props) => {
       {values.map(value => (
         <option
           key={value}
-          className={"text-xl text-[--gray]"}
+          className={"text-xl text-[--gray] hover:bg-black"}
+          style={{
+            boxShadow: `0 0 10px 100px #1882A8 inset`
+          }}
           value={value}
         >
           {value}

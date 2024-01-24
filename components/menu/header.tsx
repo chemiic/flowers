@@ -9,15 +9,14 @@ import Contacts from "@/components/icons/contacts/contacts";
 import Cart from "@/components/icons/cart/cart";
 
 import Link from "next/link";
-import style from "@/components/menu/header.module.css"
+import style from "@/components/menu/menu.module.css"
 import Phone from "@/components/icons/phone/phone";
 import {usePathname} from "next/navigation";
 import Balloons from "@/components/icons/balloons/balloons";
 
-
 const Header = () => {
 
-    const cartCount = 1
+    const cartCount:number = 1;
     const path = usePathname()
     return(
         <div className={`hidden lg:flex justify-between items-center px-[--pagePadding] py-[20px] relative`}>
@@ -77,7 +76,7 @@ const Header = () => {
                     {cartCount !== 0 && `${cartCount}шт`}
                 </div>
                 <div className={`flex flex-col items-center max-[1240px]:hidden ${style.navItem}`}>
-                    <a href={`tel:+79264974500`} className={`block`}>
+                    <a href={`tel:+79264974500`} className={`block max-[1240px]:hidden`}>
                     <div className={`h-[24px]`}>
                         <Phone/>
                     </div>+7 (926) 497-45-00</a>
