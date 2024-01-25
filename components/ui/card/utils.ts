@@ -1,7 +1,3 @@
-type props = {
-  price: number;
-  discount: number
-};
 
 export const format = (str: string): string => {
   const s: number = str.length;
@@ -14,6 +10,6 @@ export const format = (str: string): string => {
   return ((strWithSpaces[0] === ' ') ? strWithSpaces.slice(1) : strWithSpaces);
 }
 
-export const discountPrice = ({price, discount}: props): string => {
+export const discountPrice = (price:number, discount:number) => {
   return format((price - price * discount / 100).toFixed(0));
 };
