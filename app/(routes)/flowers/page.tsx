@@ -8,6 +8,7 @@ import Select from "@/components/ui/select/select";
 import {sortValues} from "@/utils/constants";
 import Card from "@/components/ui/card/card";
 import {NextPage} from "next";
+import {Product} from "@/types/types";
 
 
 
@@ -29,9 +30,9 @@ const FlowersPage:NextPage = () => {
     }
   ];
   const f_packages: string[] = ["Крафт бумага", "Ленты", "Плёнка"];
-
-  const flowers = [
+  const flowers: Array<Product> = [
     {
+      id:'1',
       image: "/image.png",
       discount: 16,
       name: "Вьюнок 001",
@@ -44,6 +45,7 @@ const FlowersPage:NextPage = () => {
       price: 7990,
     },
     {
+      id:'2',
       image: "/image.png",
       discount: 0,
       name: "Розы 006",
@@ -56,6 +58,20 @@ const FlowersPage:NextPage = () => {
       price: 200,
     },
     {
+      id:'3',
+      image: "/image.png",
+      discount: 0,
+      name: "Тюльпан 014",
+      label: "Тюльпан",
+      height: 350,
+      color: {
+        label: "Розовый",
+        hex: "#FFD3E3",
+      },
+      price: 7000,
+    },
+    {
+      id:'4',
       image: "/image.png",
       discount: 0,
       name: "Тюльпан 014",
@@ -154,8 +170,8 @@ const FlowersPage:NextPage = () => {
                 <Select name={"sort_type"} values={sortValues} />
              </div>
             <div className={"grid grid-cols-3 gap-x-[24px] gap-y-[55px]"}>
-              {flowers.map((flower, index) => (
-                <Card key={index} {...flower} />
+              {flowers.map((flower) => (
+                <Card product={flower} key={flower.id} />
               ))}
             </div>
         </div>
