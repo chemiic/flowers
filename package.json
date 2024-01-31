@@ -11,16 +11,18 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@next/font": "^14.0.4",
-    "@types/react-transition-group": "^4.4.10",
     "clsx": "^2.1.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "react-transition-group": "^4.4.5",
-    "tailwind-merge": "^2.2.0"
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/react-transition-group": "^4.4.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",

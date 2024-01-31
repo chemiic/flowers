@@ -22,6 +22,7 @@
 body {
   background: var(--milk);
   font-weight: 400;
+  color: var(--gray);
 }
 
 .alert-enter {
