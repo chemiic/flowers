@@ -20,7 +20,7 @@ const Footer = () => {
   const path = usePathname()
   return(
     <footer className={`bg-[--gray] text-[--crystal] flex footer justify-between items-center py-6 px-[--pagePadding]
-    max-[1240px]:flex-col gap-6`}>
+    max-[1240px]:flex-col gap-6 mt-auto`}>
       <Link href={`/`} className={`flex items-end max-[1440px]:flex-col max-[1440px]:gap-1 max-[1440px]:items-center hover:cursor-pointer 
             relative min-[1440px]:z-10 ${style.footerLogoGroup}`}>
         <div className={`max-w-[80px]`}>

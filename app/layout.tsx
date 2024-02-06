@@ -3,6 +3,7 @@ import './globals.css'
 import Burger from "@/components/menu/burger";
 import Header from "@/components/menu/header";
 import localFont from "@next/font/local";
+import ToastProvider from "@/providers/toast-provider";
 import Footer from "@/components/menu/Footer";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ const SFPro = localFont({
   variable: "--SFPro"
 })
 
+
 export default function RootLayout({
   children,
 }: {
@@ -35,12 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${SFPro.variable} font-sans`}>
-          <Header />
-          <Burger />
-          <div className={`max-w-[1920px] mx-auto`}>
-            {children}
-          </div>
-          <Footer />
+        <Header />
+        <ToastProvider />
+        <Burger />
+        <div className={`max-w-[1920px] mx-auto`}>
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   )

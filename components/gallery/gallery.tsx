@@ -10,7 +10,7 @@ import { Key } from "react";
 const Gallery = (images: { images: any; }) => {
   const imageArr = images.images
   return (
-    <Tab.Group as="div" className="flex items-center h-[600px] my-4">
+    <Tab.Group as="div" className="flex items-center h-[600px]">
       <div className="hidden pr-6 max-w-2xl sm:block lg:max-w-none h-full">
         <Tab.List className="flex flex-col gap-3 w-[100px]">
           {imageArr.map((image: any, index: any) => (

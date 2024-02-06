@@ -33,7 +33,7 @@ const FlowersPage:NextPage = () => {
   const flowers: Array<Product> = [
     {
       id:'1',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 16,
       name: "Вьюнок 001",
       label: "Вьюнок куст",
@@ -46,7 +46,7 @@ const FlowersPage:NextPage = () => {
     },
     {
       id:'2',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Розы 006",
       label: "Роза кустовая например",
@@ -59,7 +59,7 @@ const FlowersPage:NextPage = () => {
     },
     {
       id:'3',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Тюльпан 014",
       label: "Тюльпан",
@@ -72,7 +72,7 @@ const FlowersPage:NextPage = () => {
     },
     {
       id:'4',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Тюльпан 014",
       label: "Тюльпан",

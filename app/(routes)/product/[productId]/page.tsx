@@ -5,7 +5,7 @@ import {Product} from "@/types/types";
 import Image from "next/image";
 
 import recomendation from '@/public/recomendation.png';
-import {discountPrice, format} from "@/components/ui/card/utils";
+import ProductAddToCartForm from "@/app/(routes)/product/[productId]/components/productAddToCartForm";
 interface ProductIdPageProps {
   params: {
     productId: string
@@ -17,7 +17,7 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
   // const product: Product = await getProduct(params.productId);
   const product = {
     id:'1',
-    images: ['/image.png', '/image.png','/image.png','/image.png',  ],
+    images: ['/image.png', '/image.png','/image.png','/image.png'],
     discount: 16,
     name: "Вьюнок 001",
     label: "Вьюнок куст",
@@ -31,7 +31,7 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
   const flowers: Array<Product> = [
     {
       id:'1',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 16,
       name: "Вьюнок 001",
       label: "Вьюнок куст",
@@ -44,7 +44,7 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
     },
     {
       id:'2',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Розы 006",
       label: "Роза кустовая например",
@@ -57,7 +57,7 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
     },
     {
       id:'3',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Тюльпан 014",
       label: "Тюльпан",
@@ -70,7 +70,7 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
     },
     {
       id:'4',
-      image: "/image.png",
+      images: ['/image.png', '/image.png','/image.png','/image.png'],
       discount: 0,
       name: "Тюльпан 014",
       label: "Тюльпан",
@@ -89,13 +89,11 @@ const ProductIdPage: NextPage<ProductIdPageProps> = async ({params}) => {
         <h2 className={`text-4xl uppercase font-medium text-center text-[--gray] mt-[60px]`}>Цветы</h2>
         <div className={`flex mt-[40px]`}>
           <Gallery images={product.images}/>
-          <div className={`ml-[40px] `}>
-            <h3 className={`text-[32px] font-medium`}>{product.name}</h3>
-            <div className={`flex items-center gap-2`}>
-              {!!product.discount ? <p className={"text-xl text-[--fur] line-through"}>{format(product.price.toString())}₽</p> : <p className={"text-2xl text-[--gray] font-medium"}>{format(product.price.toString())}₽</p>}
-              {!!product.discount && <p className={"text-2xl text-[--gray] font-medium"}>{discountPrice(product.price, product.discount)}₽</p>}
-            </div>
+          <div className={`ml-[40px] flex-grow`}>
+            <ProductAddToCartForm product={product}/>
+            <div>
 
+            </div>
           </div>
         </div>
         <div className="flex flex-col my-[80px] gap-12 items-center">

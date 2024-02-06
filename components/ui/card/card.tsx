@@ -6,28 +6,30 @@ import {discountPrice, format} from "@/components/ui/card/utils";
 import {useRouter} from "next/navigation";
 import {FC, MouseEventHandler} from "react";
 import {Product} from "@/types/types";
+import useCart from "@/hooks/use-cart";
 
-type ProductCardProps = {
+interface ProductCardProps {
  product: Product;
-};
+}
 
 const Card:FC<ProductCardProps> = ({product}) => {
   const router = useRouter();
-  // const cart = useCart();
+  const cart = useCart();
   const handleClick = ():void =>{
     router.push(`/product/${product.id}`);
   };
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (e): void => {
     e.stopPropagation();
-    // cart.addProduct(product);
+    cart.addProduct(product);
   };
-
+  console.log(product)
   return (
     <div className={"relative group flex flex-col items-center justify-center w-full overflow-hidden"}>
       {!!product.discount && <div className={"absolute -right-2.5 -top-2.5 rounded-full bg-[--crystal]"}>
         <p className={"text-[--salad] text-xl text-center px-3.5 py-6"}>-{product.discount}%</p>
       </div>}
-      <Image src={product.image} className={"object-cover rounded-sm group-hover:rounded-b-0 group-hover:rounded-t-sm hover:cursor-pointer"} alt={"Image"} width={432} height={432} onClick={handleClick}/>
+      <Image src={product.images[0]} className={"object-cover rounded-sm group-hover:rounded-b-0" +
+        " group-hover:rounded-t-sm hover:cursor-pointer"} alt={"Image"} width={432} height={432} onClick={handleClick}/>
       <div className={"flex flex-col items-center justify-center gap-y-1 py-4 px-2 w-full"}>
         <h3 className={"text-xl text-[--gray]"}>
           {product.name}
